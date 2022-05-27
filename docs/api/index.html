@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Quan Lin">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>API Documentation - basicdweet</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="//use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" />
+  <link href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css" rel="stylesheet" />
+  <link href="../css/mkapi-common.css" rel="stylesheet" />
+  <link href="../css/mkapi-readthedocs.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "API Documentation";
+    var mkdocs_page_input_path = "api.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> basicdweet</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">API Documentation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#basicdweet">basicdweet</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#basicdweetbasicdweeterror">BasicDweetError</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#basicdweetdweet_for">dweet_for</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#basicdweetget_latest_dweet_for">get_latest_dweet_for</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#basicdweetget_dweets_for">get_dweets_for</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">basicdweet</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>API Documentation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="api-documentation">API Documentation</h1>
+<div class="mkapi-node" id="basicdweet">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object package plain top">
+    <div class="mkapi-object-kind package top">package</div>
+    <h2 id="basicdweet" class="mkapi-object-body package top"><span class="mkapi-object-name">basicdweet</span></h2>
+  </div>
+  
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>A python module for very basic APIs of the free dweet service.</p>
+<ul>
+<li>Author: Quan Lin</li>
+<li>License: MIT</li>
+</ul></div>
+    </div>
+  <div class="mkapi-section classes">
+      <div class="mkapi-section-name classes">
+          <span class="mkapi-section-name-body classes">Classes</span> 
+        </div>
+      <div class="mkapi-section-body classes"><ul class="mkapi-items">
+<li class="class"><code class="mkapi-item-name"><a href="#basicdweet.BasicDweetError">BasicDweetError</a></code>
+
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Common base class for all non-exit exceptions.</span></li>
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section functions">
+      <div class="mkapi-section-name functions">
+          <span class="mkapi-section-name-body functions">Functions</span> 
+        </div>
+      <div class="mkapi-section-body functions"><ul class="mkapi-items">
+<li class="function"><code class="mkapi-item-name"><a href="#basicdweet.dweet_for">dweet_for</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code>, <code class="mkapi-object-signature">payload</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(dict)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The <code>dweet for</code> API.</span></li>
+
+<li class="function"><code class="mkapi-item-name"><a href="#basicdweet.get_dweets_for">get_dweets_for</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(list)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The <code>get dweets for</code> API.</span></li>
+
+<li class="function"><code class="mkapi-item-name"><a href="#basicdweet.get_latest_dweet_for">get_latest_dweet_for</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(list)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The <code>get latest dweet for</code> API.</span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+  <div class="mkapi-members">
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="basicdweet.BasicDweetError">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object class code top">
+    <div class="mkapi-object-kind class top">class</div>
+    <h3 id="basicdweetbasicdweeterror" class="mkapi-object-body class top"><code class="mkapi-object-prefix">basicdweet.</code><code class="mkapi-object-name">BasicDweetError</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-parenthesis">)</code></h3>
+  </div>
+  
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section bases">
+      <div class="mkapi-section-name bases">
+          <span class="mkapi-section-name-body bases">Bases</span> 
+        </div>
+      <div class="mkapi-section-body bases">
+<span class="mkapi-base">Exception</span>
+
+<span class="mkapi-base">BaseException</span>
+</div>
+    </div>
+  <div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Common base class for all non-exit exceptions.</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="basicdweet.dweet_for">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object function code top">
+    <div class="mkapi-object-kind function top">function</div>
+    <h3 id="basicdweetdweet_for" class="mkapi-object-body function top"><code class="mkapi-object-prefix">basicdweet.</code><code class="mkapi-object-name">dweet_for</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code>, <code class="mkapi-object-signature">payload</code><code class="mkapi-object-parenthesis">)</code></h3>
+  </div>
+  
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>The <code>dweet for</code> API.</p></div>
+    </div>
+  <div class="mkapi-section parameters">
+      <div class="mkapi-section-name parameters">
+          <span class="mkapi-section-name-body parameters">Parameters</span> 
+        </div>
+      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">thing_name</code>
+<span class="mkapi-item-type">(str)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The name of the thing to dweet.</span></li>
+
+<li><code class="mkapi-item-name">payload</code>
+<span class="mkapi-item-type">(dict)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The content of the thing to dweet.
+It is passed to <code>json.dumps</code>. So a dict fits it the best.</span></li>
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section returns">
+      <div class="mkapi-section-name returns">
+          <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(dict)</span>
+        </div>
+      <div class="mkapi-section-body returns"><p>The dweet transaction dict returned from dweet service.
+It should include the keys of 'thing', 'content', 'created' and 'transaction'.</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="basicdweet.get_latest_dweet_for">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object function code top">
+    <div class="mkapi-object-kind function top">function</div>
+    <h3 id="basicdweetget_latest_dweet_for" class="mkapi-object-body function top"><code class="mkapi-object-prefix">basicdweet.</code><code class="mkapi-object-name">get_latest_dweet_for</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code><code class="mkapi-object-parenthesis">)</code></h3>
+  </div>
+  
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>The <code>get latest dweet for</code> API.</p></div>
+    </div>
+  <div class="mkapi-section parameters">
+      <div class="mkapi-section-name parameters">
+          <span class="mkapi-section-name-body parameters">Parameters</span> 
+        </div>
+      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">thing_name</code>
+<span class="mkapi-item-type">(str)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The name of the thing to dweet.</span></li>
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section returns">
+      <div class="mkapi-section-name returns">
+          <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(list)</span>
+        </div>
+      <div class="mkapi-section-body returns"><p>The list of dweet transaction dicts.
+There is only the latest transaction dict in it.</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+    <div class="mkapi-member">
+      <div class="mkapi-node" id="basicdweet.get_dweets_for">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object function code top">
+    <div class="mkapi-object-kind function top">function</div>
+    <h3 id="basicdweetget_dweets_for" class="mkapi-object-body function top"><code class="mkapi-object-prefix">basicdweet.</code><code class="mkapi-object-name">get_dweets_for</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code><code class="mkapi-object-parenthesis">)</code></h3>
+  </div>
+  
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>The <code>get dweets for</code> API.</p></div>
+    </div>
+  <div class="mkapi-section parameters">
+      <div class="mkapi-section-name parameters">
+          <span class="mkapi-section-name-body parameters">Parameters</span> 
+        </div>
+      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">thing_name</code>
+<span class="mkapi-item-type">(str)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The name of the thing to dweet.</span></li>
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section returns">
+      <div class="mkapi-section-name returns">
+          <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(list)</span>
+        </div>
+      <div class="mkapi-section-body returns"><p>The list of dweet transaction dicts.
+There are at most 5 latest transaction dicts in it.</p></div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  
+  </div>
+
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2022 <a href="https://github.com/jacklinquan">Quan Lin</a>.</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/jacklinquan/basicdweet" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../js/mkapi.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
