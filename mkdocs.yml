@@ -8,6 +8,10 @@ edit_uri: ""
 theme:
     name: readthedocs
 
+docs_dir: md_docs
+
+site_dir: docs
+
 nav:
     - Home: index.md
     - API Documentation: api.md
