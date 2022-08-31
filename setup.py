@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="basicdweet",
-    version="0.2.0",
+    version="0.3.0",
     description="A python module for very basic APIs of the free dweet service.",
     long_description="https://github.com/jacklinquan/basicdweet",
     long_description_content_type="text/markdown",

@@ -123,15 +123,15 @@
           <span class="mkapi-section-name-body functions">Functions</span> 
         </div>
       <div class="mkapi-section-body functions"><ul class="mkapi-items">
-<li class="function"><code class="mkapi-item-name"><a href="#basicdweet.dweet_for">dweet_for</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code>, <code class="mkapi-object-signature">payload</code>, <code class="mkapi-object-signature">base_url</code><code class="mkapi-object-parenthesis">)</code>
+<li class="function"><code class="mkapi-item-name"><a href="#basicdweet.dweet_for">dweet_for</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code>, <code class="mkapi-object-signature">payload</code>, <code class="mkapi-object-signature">base_url</code>, <code class="mkapi-object-signature">**kwargs</code><code class="mkapi-object-parenthesis">)</code>
 <span class="mkapi-item-type">(dict)</span>
 <span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The <code>dweet for</code> API.</span></li>
 
-<li class="function"><code class="mkapi-item-name"><a href="#basicdweet.get_dweets_for">get_dweets_for</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code>, <code class="mkapi-object-signature">base_url</code><code class="mkapi-object-parenthesis">)</code>
+<li class="function"><code class="mkapi-item-name"><a href="#basicdweet.get_dweets_for">get_dweets_for</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code>, <code class="mkapi-object-signature">base_url</code>, <code class="mkapi-object-signature">**kwargs</code><code class="mkapi-object-parenthesis">)</code>
 <span class="mkapi-item-type">(list)</span>
 <span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The <code>get dweets for</code> API.</span></li>
 
-<li class="function"><code class="mkapi-item-name"><a href="#basicdweet.get_latest_dweet_for">get_latest_dweet_for</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code>, <code class="mkapi-object-signature">base_url</code><code class="mkapi-object-parenthesis">)</code>
+<li class="function"><code class="mkapi-item-name"><a href="#basicdweet.get_latest_dweet_for">get_latest_dweet_for</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code>, <code class="mkapi-object-signature">base_url</code>, <code class="mkapi-object-signature">**kwargs</code><code class="mkapi-object-parenthesis">)</code>
 <span class="mkapi-item-type">(list)</span>
 <span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The <code>get latest dweet for</code> API.</span></li>
 
@@ -175,7 +175,7 @@
 <div class='mkapi-object-container'>
   <div class="mkapi-object function code top">
     <div class="mkapi-object-kind function top">function</div>
-    <h3 id="basicdweetdweet_for" class="mkapi-object-body function top"><code class="mkapi-object-prefix">basicdweet.</code><code class="mkapi-object-name">dweet_for</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code>, <code class="mkapi-object-signature">payload</code>, <code class="mkapi-object-signature">base_url=&#39;https://dweet.io&#39;</code><code class="mkapi-object-parenthesis">)</code></h3>
+    <h3 id="basicdweetdweet_for" class="mkapi-object-body function top"><code class="mkapi-object-prefix">basicdweet.</code><code class="mkapi-object-name">dweet_for</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code>, <code class="mkapi-object-signature">payload</code>, <code class="mkapi-object-signature">base_url=&#39;https://dweet.io&#39;</code>, <code class="mkapi-object-signature">**kwargs</code><code class="mkapi-object-parenthesis">)</code></h3>
   </div>
   
 </div>
@@ -203,6 +203,7 @@ It is passed to <code>json.dumps</code>. So a dict fits it the best.</span></li>
 (default is "https://dweet.io")</span></li>
 
 
+
 </ul></div>
     </div>
   <div class="mkapi-section returns">
@@ -222,7 +223,7 @@ It should include the keys of 'thing', 'content', 'created' and 'transaction'.</
 <div class='mkapi-object-container'>
   <div class="mkapi-object function code top">
     <div class="mkapi-object-kind function top">function</div>
-    <h3 id="basicdweetget_latest_dweet_for" class="mkapi-object-body function top"><code class="mkapi-object-prefix">basicdweet.</code><code class="mkapi-object-name">get_latest_dweet_for</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code>, <code class="mkapi-object-signature">base_url=&#39;https://dweet.io&#39;</code><code class="mkapi-object-parenthesis">)</code></h3>
+    <h3 id="basicdweetget_latest_dweet_for" class="mkapi-object-body function top"><code class="mkapi-object-prefix">basicdweet.</code><code class="mkapi-object-name">get_latest_dweet_for</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code>, <code class="mkapi-object-signature">base_url=&#39;https://dweet.io&#39;</code>, <code class="mkapi-object-signature">**kwargs</code><code class="mkapi-object-parenthesis">)</code></h3>
   </div>
   
 </div>
@@ -245,6 +246,7 @@ It should include the keys of 'thing', 'content', 'created' and 'transaction'.</
 (default is "https://dweet.io")</span></li>
 
 
+
 </ul></div>
     </div>
   <div class="mkapi-section returns">
@@ -264,7 +266,7 @@ There is only the latest transaction dict in it.</p></div>
 <div class='mkapi-object-container'>
   <div class="mkapi-object function code top">
     <div class="mkapi-object-kind function top">function</div>
-    <h3 id="basicdweetget_dweets_for" class="mkapi-object-body function top"><code class="mkapi-object-prefix">basicdweet.</code><code class="mkapi-object-name">get_dweets_for</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code>, <code class="mkapi-object-signature">base_url=&#39;https://dweet.io&#39;</code><code class="mkapi-object-parenthesis">)</code></h3>
+    <h3 id="basicdweetget_dweets_for" class="mkapi-object-body function top"><code class="mkapi-object-prefix">basicdweet.</code><code class="mkapi-object-name">get_dweets_for</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">thing_name</code>, <code class="mkapi-object-signature">base_url=&#39;https://dweet.io&#39;</code>, <code class="mkapi-object-signature">**kwargs</code><code class="mkapi-object-parenthesis">)</code></h3>
   </div>
   
 </div>
@@ -285,6 +287,7 @@ There is only the latest transaction dict in it.</p></div>
 <span class="mkapi-item-type">(str, optional)</span>
 <span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The base url of the dweet server.
 (default is "https://dweet.io")</span></li>
+
 
 
 </ul></div>
