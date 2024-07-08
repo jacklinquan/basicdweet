@@ -1,5 +1,5 @@
 site_name: basicdweet
-site_description: A python module for very basic APIs of the free dweet service.
+site_description: Basic APIs of the free dweet service.
 site_author: Quan Lin
 
 repo_url: https://github.com/jacklinquan/basicdweet
@@ -16,7 +16,7 @@ nav:
     - Home: index.md
     - API Documentation: api.md
 
-copyright: Copyright &copy; 2022 <a href="https://github.com/jacklinquan">Quan Lin</a>.
+copyright: Copyright &copy; 2024 <a href="https://github.com/jacklinquan">Quan Lin</a>.
 
 plugins:
     - search

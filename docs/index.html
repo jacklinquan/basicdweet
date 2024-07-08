@@ -3,16 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="A python module for very basic APIs of the free dweet service." /><meta name="author" content="Quan Lin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Basic APIs of the free dweet service." /><meta name="author" content="Quan Lin" />
       <link rel="shortcut icon" href="img/favicon.ico" />
     <title>basicdweet</title>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
-        <link href="//use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" />
-        <link href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css" rel="stylesheet" />
-        <link href="css/mkapi-common.css" rel="stylesheet" />
-        <link href="css/mkapi-readthedocs.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="mkapi-common.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -21,12 +18,11 @@
         var mkdocs_page_url = null;
       </script>
     
-    <script src="js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -38,18 +34,34 @@
           <a href="." class="icon icon-home"> basicdweet
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#synchronous-programming">Synchronous Programming</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#asynchronous-programming">Asynchronous Programming</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#synchronous-programming_1">Synchronous Programming</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#asynchronous-programming_1">Asynchronous Programming</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#test">Test</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#build-documentation">Build documentation</a>
     </li>
     </ul>
                 </li>
@@ -71,8 +83,8 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Home</li>
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Home</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -81,8 +93,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="basicdweet">basicdweet</h1>
-<p>A python module for very basic APIs of the free dweet service.
+                <h1 id="basic-dweet">Basic Dweet</h1>
+<p><a href="https://badge.fury.io/py/basicdweet"><img alt="PyPI version" src="https://badge.fury.io/py/basicdweet.svg" /></a>
+<a href="https://pepy.tech/project/basicdweet"><img alt="Downloads" src="https://pepy.tech/badge/basicdweet" /></a></p>
+<p><a href="https://jacklinquan.github.io/basicdweet">Documentation</a></p>
+<p>Basic APIs of the free dweet service.
 Dweet is a simple machine-to-machine (M2M) service from <a href="https://dweet.io">dweet.io</a>.</p>
 <p>This module only supports these dweet APIs of the free dweet service:</p>
 <ul>
@@ -90,21 +105,80 @@ Dweet is a simple machine-to-machine (M2M) service from <a href="https://dweet.i
 <li><code>get latest dweet for</code></li>
 <li><code>get dweets for</code></li>
 </ul>
+<p>It also can be used in MicroPython.</p>
 <h2 id="installation">Installation</h2>
-<p><code>pip install basicdweet</code></p>
+<h3 id="synchronous-programming">Synchronous Programming</h3>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>basicdweet
+</code></pre></div>
+<h3 id="asynchronous-programming">Asynchronous Programming</h3>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>basicdweet<span class="o">[</span>aiohttp<span class="o">]</span>
+</code></pre></div>
 <h2 id="usage">Usage</h2>
-<pre><code class="language-python">&gt;&gt;&gt; import basicdweet
-&gt;&gt;&gt; basicdweet.dweet_for('YOUR_THING', {'YOUR_DATA': 'YOUR_VALUE'})
-{'content': {'YOUR_DATA': 'YOUR_VALUE'}, 'created': '2022-05-27T06:17:48.127Z', 'thing': 'YOUR_THING', 'transaction': '403dcd2b-99b9-44b4-b864-b682b898ac10'}
-&gt;&gt;&gt; basicdweet.get_latest_dweet_for('YOUR_THING')
-[{'content': {'YOUR_DATA': 'YOUR_VALUE'}, 'created': '2022-05-27T06:17:48.127Z', 'thing': 'YOUR_THING'}]
-&gt;&gt;&gt; basicdweet.dweet_for('YOUR_THING', {'YOUR_DATA': 'YOUR_VALUE_2'})
-{'content': {'YOUR_DATA': 'YOUR_VALUE_2'}, 'created': '2022-05-27T06:19:08.081Z', 'thing': 'YOUR_THING', 'transaction': '30cdc5b8-5da9-40ac-86a9-ea0df5ef8317'}
-&gt;&gt;&gt; basicdweet.get_latest_dweet_for('YOUR_THING')
-[{'content': {'YOUR_DATA': 'YOUR_VALUE_2'}, 'created': '2022-05-27T06:19:08.081Z', 'thing': 'YOUR_THING'}]
-&gt;&gt;&gt; basicdweet.get_dweets_for('YOUR_THING')
-[{'content': {'YOUR_DATA': 'YOUR_VALUE_2'}, 'created': '2022-05-27T06:19:08.081Z', 'thing': 'YOUR_THING'}, {'content': {'YOUR_DATA': 'YOUR_VALUE'}, 'created': '2022-05-27T06:17:48.127Z', 'thing': 'YOUR_THING'}]
-</code></pre>
+<h3 id="synchronous-programming_1">Synchronous Programming</h3>
+<details open><summary>Code</summary>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">basicdweet</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">basicdweet</span><span class="o">.</span><span class="n">dweet_for</span><span class="p">(</span><span class="s2">&quot;YOUR_THING&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;YOUR_DATA&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_VALUE&quot;</span><span class="p">}))</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">basicdweet</span><span class="o">.</span><span class="n">get_latest_dweet_for</span><span class="p">(</span><span class="s2">&quot;YOUR_THING&quot;</span><span class="p">))</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">basicdweet</span><span class="o">.</span><span class="n">dweet_for</span><span class="p">(</span><span class="s2">&quot;YOUR_THING&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;YOUR_DATA&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_VALUE_2&quot;</span><span class="p">}))</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">basicdweet</span><span class="o">.</span><span class="n">get_latest_dweet_for</span><span class="p">(</span><span class="s2">&quot;YOUR_THING&quot;</span><span class="p">))</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">basicdweet</span><span class="o">.</span><span class="n">get_dweets_for</span><span class="p">(</span><span class="s2">&quot;YOUR_THING&quot;</span><span class="p">))</span>
+</code></pre></div>
+</details>
+
+<details open><summary>Output</summary>
+
+<div class="highlight"><pre><span></span><code>{&#39;thing&#39;: &#39;YOUR_THING&#39;, &#39;created&#39;: &#39;2024-07-05T04:53:36.896Z&#39;, &#39;content&#39;: {&#39;YOUR_DATA&#39;: &#39;YOUR_VALUE&#39;}, &#39;transaction&#39;: &#39;9cd0b361-05fc-451d-be7b-280172242f25&#39;}
+[{&#39;thing&#39;: &#39;YOUR_THING&#39;, &#39;created&#39;: &#39;2024-07-05T04:53:36.896Z&#39;, &#39;content&#39;: {&#39;YOUR_DATA&#39;: &#39;YOUR_VALUE&#39;}}]
+{&#39;thing&#39;: &#39;YOUR_THING&#39;, &#39;created&#39;: &#39;2024-07-05T04:53:42.697Z&#39;, &#39;content&#39;: {&#39;YOUR_DATA&#39;: &#39;YOUR_VALUE_2&#39;}, &#39;transaction&#39;: &#39;926d396d-cf41-4feb-89c3-46ffb0960053&#39;}
+[{&#39;thing&#39;: &#39;YOUR_THING&#39;, &#39;created&#39;: &#39;2024-07-05T04:53:42.697Z&#39;, &#39;content&#39;: {&#39;YOUR_DATA&#39;: &#39;YOUR_VALUE_2&#39;}}]
+[{&#39;thing&#39;: &#39;YOUR_THING&#39;, &#39;created&#39;: &#39;2024-07-05T04:53:42.697Z&#39;, &#39;content&#39;: {&#39;YOUR_DATA&#39;: &#39;YOUR_VALUE_2&#39;}}, {&#39;thing&#39;: &#39;YOUR_THING&#39;, &#39;created&#39;: &#39;2024-07-05T04:53:36.896Z&#39;, &#39;content&#39;: {&#39;YOUR_DATA&#39;: &#39;YOUR_VALUE&#39;}}]
+</code></pre></div>
+</details>
+
+<h3 id="asynchronous-programming_1">Asynchronous Programming</h3>
+<details><summary>Code</summary>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">basicdweet</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">async_test</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">basicdweet</span><span class="o">.</span><span class="n">async_dweet_for</span><span class="p">(</span><span class="s2">&quot;YOUR_THING&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;YOUR_DATA&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_VALUE&quot;</span><span class="p">}))</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">basicdweet</span><span class="o">.</span><span class="n">async_get_latest_dweet_for</span><span class="p">(</span><span class="s2">&quot;YOUR_THING&quot;</span><span class="p">))</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">basicdweet</span><span class="o">.</span><span class="n">async_dweet_for</span><span class="p">(</span><span class="s2">&quot;YOUR_THING&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;YOUR_DATA&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_VALUE_2&quot;</span><span class="p">}))</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">basicdweet</span><span class="o">.</span><span class="n">async_get_latest_dweet_for</span><span class="p">(</span><span class="s2">&quot;YOUR_THING&quot;</span><span class="p">))</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">basicdweet</span><span class="o">.</span><span class="n">async_get_dweets_for</span><span class="p">(</span><span class="s2">&quot;YOUR_THING&quot;</span><span class="p">))</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">async_test</span><span class="p">())</span>
+</code></pre></div>
+</details>
+
+<details><summary>Output</summary>
+
+<div class="highlight"><pre><span></span><code>{&#39;thing&#39;: &#39;YOUR_THING&#39;, &#39;created&#39;: &#39;2024-07-05T04:58:08.829Z&#39;, &#39;content&#39;: {&#39;YOUR_DATA&#39;: &#39;YOUR_VALUE&#39;}, &#39;transaction&#39;: &#39;12d7e422-e8ce-408c-be0c-d61cc5d3d730&#39;}
+[{&#39;thing&#39;: &#39;YOUR_THING&#39;, &#39;created&#39;: &#39;2024-07-05T04:58:08.829Z&#39;, &#39;content&#39;: {&#39;YOUR_DATA&#39;: &#39;YOUR_VALUE&#39;}}]
+{&#39;thing&#39;: &#39;YOUR_THING&#39;, &#39;created&#39;: &#39;2024-07-05T04:58:14.650Z&#39;, &#39;content&#39;: {&#39;YOUR_DATA&#39;: &#39;YOUR_VALUE_2&#39;}, &#39;transaction&#39;: &#39;ffbb2f4e-f954-4b4c-887e-7a492c0ce0ba&#39;}
+[{&#39;thing&#39;: &#39;YOUR_THING&#39;, &#39;created&#39;: &#39;2024-07-05T04:58:14.650Z&#39;, &#39;content&#39;: {&#39;YOUR_DATA&#39;: &#39;YOUR_VALUE_2&#39;}}]
+[{&#39;thing&#39;: &#39;YOUR_THING&#39;, &#39;created&#39;: &#39;2024-07-05T04:58:14.650Z&#39;, &#39;content&#39;: {&#39;YOUR_DATA&#39;: &#39;YOUR_VALUE_2&#39;}}, {&#39;thing&#39;: &#39;YOUR_THING&#39;, &#39;created&#39;: &#39;2024-07-05T04:58:08.829Z&#39;, &#39;content&#39;: {&#39;YOUR_DATA&#39;: &#39;YOUR_VALUE&#39;}}]
+</code></pre></div>
+</details>
+
+<h2 id="test">Test</h2>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pytest
+</code></pre></div>
+<h2 id="build-documentation">Build documentation</h2>
+<div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>build
+</code></pre></div>
               
             </div>
           </div><footer>
@@ -116,7 +190,7 @@ Dweet is a simple machine-to-machine (M2M) service from <a href="https://dweet.i
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-      <p>Copyright &copy; 2022 <a href="https://github.com/jacklinquan">Quan Lin</a>.</p>
+      <p>Copyright &copy; 2024 <a href="https://github.com/jacklinquan">Quan Lin</a>.</p>
   </div>
 
   Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
@@ -142,21 +216,21 @@ Dweet is a simple machine-to-machine (M2M) service from <a href="https://dweet.i
     
   </span>
 </div>
-    <script>var base_url = '.';</script>
-    <script src="js/theme_extra.js" defer></script>
-    <script src="js/theme.js" defer></script>
-      <script src="js/mkapi.js" defer></script>
-      <script src="search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
 </html>
 
 <!--
-MkDocs version : 1.3.1
-Build Date UTC : 2022-08-31 04:41:46.048024+00:00
+MkDocs version : 1.6.0
+Build Date UTC : 2024-07-08 01:44:05.054347+00:00
 -->
